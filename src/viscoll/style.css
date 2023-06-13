@@ -1,3 +1,7 @@
+body {
+    font-family: "Roboto Slab", "Roboto", Arial, sans-serif;
+}
+
 .viscoll {
     margin: 10px;
 }
@@ -68,7 +72,7 @@
 
     left: 0;
     right: 0;
-    height: 10px;
+    height: 15px;
 
     max-width: 100px;
 
@@ -87,7 +91,7 @@
 }
 
 .viscoll-group .members .leaf .line .pasted.below {
-    top: 12px;
+    top: 15px;
 }
 
 .viscoll-group .members .leaf .folio-number {
@@ -178,4 +182,21 @@
     border-top: 10px solid #4e6891;
     border-left: 10px solid #4e6891;
     border-bottom: 10px solid #4e6891;
+}
+
+.viscoll-group .members .join .sewing {
+    position: absolute;
+
+    top: 50%;
+    left: -12px;
+
+    margin-top: 3px;
+
+    width: 36px;
+
+    height: 3px;
+
+    background: #444;
+
+    border-radius: 3px;
 }
