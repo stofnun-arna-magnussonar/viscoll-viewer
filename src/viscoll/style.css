@@ -29,6 +29,24 @@ body {
     margin-top: 10px;
 }
 
+.viscoll-group .members .sewing {
+    position: absolute;
+
+    left: -8px;
+
+    margin-top: 3px;
+
+    min-width: 25px;
+
+    height: 3px;
+
+    background: #444;
+
+    border-radius: 3px;
+
+    z-index: 10;
+}
+
 .viscoll-group .members .leaf {
     position: absolute;
 
@@ -49,18 +67,25 @@ body {
 
 .viscoll-group .members .leaf .line.stub {
     right: 70%;
-    max-width: 200px;
+    max-width: 400px;
 }
 
 .viscoll-group .members .leaf .line.endleaf,
 .viscoll-group .members .join.endleaf .join-line {
-    border-color: #919191;;
+    border-color: #919191;
 }
 
 .viscoll-group .members .leaf .line.added,
 .viscoll-group .members .join.added .join-line {
     border-color: #568ed7;
 
+}
+
+.viscoll-group .members .join.dashed .join-line {
+    border-top-style: dashed;
+    border-left-style: dashed;
+    border-bottom-style: dashed;
+    border-width: 5px;
 }
 
 .viscoll-group .members .leaf .line .pasted {
@@ -149,10 +174,16 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.viscoll-group .members .leaf .terms:before {
-    content: " ";
+.viscoll-group .members .leaf .terms .title {
+    cursor: pointer;
+}
 
-    display: block;
+.viscoll-group .members .leaf .terms .title span {
+    color: #999;
+}
+
+.viscoll-group .members .leaf .terms .title:hover {
+    text-decoration: underline;
 }
 
 .viscoll-group .members .leaf.hoverable:hover .line {
@@ -182,21 +213,4 @@ body {
     border-top: 10px solid #4e6891;
     border-left: 10px solid #4e6891;
     border-bottom: 10px solid #4e6891;
-}
-
-.viscoll-group .members .join .sewing {
-    position: absolute;
-
-    top: 50%;
-    left: -12px;
-
-    margin-top: 3px;
-
-    width: 36px;
-
-    height: 3px;
-
-    background: #444;
-
-    border-radius: 3px;
 }
