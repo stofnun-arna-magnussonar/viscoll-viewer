@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/viscoll/static/css/main.fa911582.css",
+    "main.css": "/viscoll/static/css/main.01f15b9f.css",
     "main.js": "/viscoll/static/js/main.2a8aae99.js",
     "static/js/787.7af1b64a.chunk.js": "/viscoll/static/js/787.7af1b64a.chunk.js",
     "index.html": "/viscoll/index.html",
-    "main.fa911582.css.map": "/viscoll/static/css/main.fa911582.css.map",
+    "main.01f15b9f.css.map": "/viscoll/static/css/main.01f15b9f.css.map",
     "main.2a8aae99.js.map": "/viscoll/static/js/main.2a8aae99.js.map",
     "787.7af1b64a.chunk.js.map": "/viscoll/static/js/787.7af1b64a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa911582.css",
+    "static/css/main.01f15b9f.css",
     "static/js/main.2a8aae99.js"
   ]
 }

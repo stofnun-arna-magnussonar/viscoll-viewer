@@ -82,10 +82,9 @@ body {
 }
 
 .viscoll-group .members .join.dashed .join-line {
-    border-top-style: dashed;
-    border-left-style: dashed;
-    border-bottom-style: dashed;
-    border-width: 5px;
+    border-top-style: double;
+    border-left-style: double;
+    border-bottom-style: double;
 }
 
 .viscoll-group .members .leaf .line .pasted {
