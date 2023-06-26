@@ -75,6 +75,11 @@ body {
     border-color: #919191;
 }
 
+.viscoll-group .members .leaf .line.replaced,
+.viscoll-group .members .join.replaced .join-line {
+    border-color: #9d6464;
+}
+
 .viscoll-group .members .leaf .line.added,
 .viscoll-group .members .join.added .join-line {
     border-color: #568ed7;

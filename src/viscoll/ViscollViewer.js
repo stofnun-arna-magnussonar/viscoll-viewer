@@ -92,7 +92,8 @@ function Group(props) {
 							
 							<div className={'line'+(leafObj.params.stub === 'Yes' ? ' stub' : '')+
 								(leafObj.params.type == 'Added' ? ' added' : '')+
-								(leafObj.params.type == 'Endleaf' ? ' endleaf' : '')
+								(leafObj.params.type == 'Endleaf' ? ' endleaf' : '')+
+								(leafObj.params.type == 'Replaced' ? ' replaced' : '')
 							} style={{
 									top: leafHeight/2
 								}}>
@@ -161,6 +162,7 @@ function Group(props) {
 						{
 							isJoined && <div className={'join'+(leafObj.params.type == 'Added' ? ' added' : '')+
 								(leafObj.params.type == 'Endleaf' ? ' endleaf' : '')+
+								(leafObj.params.type == 'Replaced' ? ' replaced' : '')+
 								(repaired ? ' dashed' : '')
 							} 
 							style={{
