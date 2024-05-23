@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import _ from 'underscore';
 
 import './style.css';
@@ -7,10 +7,10 @@ function TermInfo(props) {
 	const [expanded, setExpanded] = useState(false);
 
 	return <div>
-		<a className="title" title={props.info} _onClick={() => setExpanded(!expanded)}>{props.title} <span style={{display: 'none'}}>{expanded ? '▲' : '▼'}</span></a>
+		<a className="title" title={props.info} onClick={() => setExpanded(!expanded)}>{props.title} <span style={{display: 'none'}}>{expanded ? '▲' : '▼'}</span></a>
 		{
 			expanded && <div style={{marginBottom: 15}}>
-				<small>{props.info}</small>
+				<small>{props.langFunc(props.info)}</small>
 			</div>
 		}
 	</div>
@@ -29,12 +29,16 @@ function Group(props) {
 	let joinIndent = 0;
 	let joinIndents = [0];
 
-	let firstLeafId = parseInt(props.data.memberOrders[0].split('_')[1])
+	let firstLeafId = parseInt(props.data.memberOrders[0].split('_')[1]);
+
+	const l = (s) => {
+		return props.langData && window.visCollLang && props.langData[window.visCollLang] && window.visCollLang != 'en' ? props.langData[window.visCollLang][s] || s : s;
+	};
 
 	return <div className="viscoll-group">
 		<div className="group-title">
 			{
-				props.data.params.type+' '+props.group
+				l(props.data.params.type)+' '+props.group
 			}
 		</div>
 
@@ -116,8 +120,9 @@ function Group(props) {
 										<div className="terms">
 										{
 												leafTerms.map((term, termIndex) => <TermInfo key={termIndex} 
-													title={'L'+leafId+': '+term.params.title} 
-													info={term.params.description} 
+													langFunc={l}
+													title={'L'+leafId+': '+l(term.params.title)} 
+													info={l(term.params.description)} 
 												/>)
 											}
 											{
@@ -126,13 +131,15 @@ function Group(props) {
 											}
 											{
 												rectoTerms.map((term, termIndex) => <TermInfo key={termIndex} 
-												title={'Recto'+leafId+': '+term.params.title} 
+													langFunc={l}
+												title={'Recto'+leafId+': '+l(term.params.title)} 
 												info={term.params.description} 
 											/>)
 											}
 											{
 												versoTerms.map((term, termIndex) => <TermInfo key={termIndex} 
-												title={'Verso'+leafId+': '+term.params.title} 
+													langFunc={l}
+												title={'Verso'+leafId+': '+l(term.params.title)} 
 												info={term.params.description} 
 											/>)
 											}
@@ -148,10 +155,10 @@ function Group(props) {
 								{
 									leafObj.params.stub !== 'Yes' && <div className="recto-verso">
 										{
-											leafRecto && <div>{leafRecto.params.page_number ? leafRecto.params.page_number : leafObj.params.folio_number+'r'}</div>
+											leafRecto && <div>{leafRecto.params.page_number ? l(leafRecto.params.page_number) : l(leafObj.params.folio_number)+'r'}</div>
 										}
 										{
-											leafVerso && <div>{leafVerso.params.page_number ? leafVerso.params.page_number : leafObj.params.folio_number+'v'}</div>
+											leafVerso && <div>{leafVerso.params.page_number ? l(leafVerso.params.page_number) : l(leafObj.params.folio_number)+'v'}</div>
 										}
 									</div>
 								}
@@ -195,11 +202,18 @@ function Group(props) {
 }
 
 function ViscollViewer(props) {
+	const [langData, setLangData] = useState(null);
+
+	useEffect(() => {
+		setLangData(props.langData);
+	}, [props.langData]);
+
 	return <div className="viscoll">
 		<h1>{props.data.project.title}</h1>
 		{
 			Object.keys(props.data.Groups).map((group, groupIndex) => {
-					return <Group key={groupIndex} 
+					return <Group langData={langData} 
+						key={groupIndex} 
 						group={group}
 						leafs={props.data.Leafs} 
 						terms={props.data.Terms} 

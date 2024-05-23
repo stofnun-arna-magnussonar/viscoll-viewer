@@ -1,220 +1,220 @@
 body {
-    font-family: "Roboto Slab", "Roboto", Arial, sans-serif;
+	font-family: "Roboto Slab", "Roboto", Arial, sans-serif;
 }
 
 .viscoll {
-    margin: 10px;
+	margin: 10px;
 }
 
 .viscoll-group {
-    max-width: 750px;
+	max-width: 750px;
 
-    padding: 30px;
+	padding: 30px;
 
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 
-    background-color: #e7e7e7;
+	background-color: #e7e7e7;
 
-    border-radius: 3px;
+	border-radius: 3px;
 }
 
 .viscoll-group .viscoll-group-title {
-    padding: 10px;
-    border: 1px #999 solid;
+	padding: 10px;
+	border: 1px #999 solid;
 }
 
 .viscoll-group .members {
-    position: relative;
+	position: relative;
 
-    margin-top: 10px;
+	margin-top: 10px;
 }
 
 .viscoll-group .members .sewing {
-    position: absolute;
+	position: absolute;
 
-    left: -8px;
+	left: -8px;
 
-    margin-top: 3px;
+	margin-top: 3px;
 
-    min-width: 25px;
+	min-width: 25px;
 
-    height: 3px;
+	height: 3px;
 
-    background: #444;
+	background: #444;
 
-    border-radius: 3px;
+	border-radius: 3px;
 
-    z-index: 10;
+	z-index: 10;
 }
 
 .viscoll-group .members .leaf {
-    position: absolute;
+	position: absolute;
 
-    left: 0;
-    right: 80px;
+	left: 0;
+	right: 80px;
 }
 
 .viscoll-group .members .leaf .line {
-    position: absolute;
+	position: absolute;
 
-    left: 10px;
-    right: 0;
+	left: 10px;
+	right: 0;
 
-    max-width: 600px;
+	max-width: 600px;
 
-    border-bottom: 10px solid #4e6891;
+	border-bottom: 10px solid #4e6891;
 }
 
 .viscoll-group .members .leaf .line.stub {
-    right: 70%;
-    max-width: 400px;
+	right: 70%;
+	max-width: 400px;
 }
 
 .viscoll-group .members .leaf .line.endleaf,
 .viscoll-group .members .join.endleaf .join-line {
-    border-color: #919191;
+	border-color: #919191;
 }
 
 .viscoll-group .members .leaf .line.replaced,
 .viscoll-group .members .join.replaced .join-line {
-    border-color: #9d6464;
+	border-color: #9d6464;
 }
 
 .viscoll-group .members .leaf .line.added,
 .viscoll-group .members .join.added .join-line {
-    border-color: #568ed7;
+	border-color: #568ed7;
 
 }
 
 .viscoll-group .members .join.dashed .join-line {
-    border-top-style: double;
-    border-left-style: double;
-    border-bottom-style: double;
+	border-top-style: double;
+	border-left-style: double;
+	border-bottom-style: double;
 }
 
 .viscoll-group .members .leaf .line .pasted {
-    content: ' ';
+	content: ' ';
 
-    display: block;
+	display: block;
 
-    position: absolute;
+	position: absolute;
 
-    left: 0;
-    right: 0;
-    height: 15px;
+	left: 0;
+	right: 0;
+	height: 15px;
 
-    max-width: 100px;
+	max-width: 100px;
 
-    background-image: linear-gradient(45deg, #666 25%, transparent 25%, transparent 50%, #666 50%, #666 75%, transparent 75%, transparent);
-    background-size: 6px 6px;
+	background-image: linear-gradient(45deg, #666 25%, transparent 25%, transparent 50%, #666 50%, #666 75%, transparent 75%, transparent);
+	background-size: 6px 6px;
 
-    z-index: 2;
+	z-index: 2;
 }
 
 .viscoll-group .members .leaf .line .pasted.tipped {
-    max-width: 20px;
+	max-width: 20px;
 }
 
 .viscoll-group .members .leaf .line .pasted.above {
-    top: -12px;
+	top: -12px;
 }
 
 .viscoll-group .members .leaf .line .pasted.below {
-    top: 15px;
+	top: 15px;
 }
 
 .viscoll-group .members .leaf .folio-number {
-    display: flex;
-    position: absolute;
+	display: flex;
+	position: absolute;
 
-    top: 50%;
-    right: -80px;
+	top: 50%;
+	right: -80px;
 
-    width: 125px;
+	width: 125px;
 
-    align-items: center;
+	align-items: center;
 
-    transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 .viscoll-group .members .leaf .folio-number .recto-verso {
-    margin-left: 10px;
+	margin-left: 10px;
 
-    font-size: 0.8rem;
+	font-size: 0.8rem;
 }
 
 .viscoll-group .members .leaf .terms-symbol {    
-    position: absolute;
-    left: 50%;
-    top:  5px;;
+	position: absolute;
+	left: 50%;
+	top:  5px;;
 
-    width: 50px;
-    height: 2px;
+	width: 50px;
+	height: 2px;
 
-    background: #ffffffba;
+	background: #ffffffba;
 
-    border-radius: 3px;
+	border-radius: 3px;
 
-    transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .viscoll-group .members .leaf .terms {
-    display: none;
-    
-    position: absolute;
-    left: 50%;
+	display: none;
+	
+	position: absolute;
+	left: 50%;
 
-    padding: 10px;
+	padding: 10px;
 
-    background: #fff;
+	background: #fff;
 
-    border: 1px solid #999;
-    border-radius: 3px;
+	border: 1px solid #999;
+	border-radius: 3px;
 
-    box-shadow: 0 2px 6px #00000059;
+	box-shadow: 0 2px 6px #00000059;
 
-    z-index: 5;
+	z-index: 5;
 
-    transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .viscoll-group .members .leaf .terms .title {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .viscoll-group .members .leaf .terms .title span {
-    color: #999;
+	color: #999;
 }
 
 .viscoll-group .members .leaf .terms .title:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .viscoll-group .members .leaf.hoverable:hover .line {
-    border-color: #ffa500;
+	border-color: #ffa500;
 }
 
 .viscoll-group .members .leaf:hover .terms {
-    display: block;
+	display: block;
 }
 
 .viscoll-group .members .join {
-    position: absolute;
+	position: absolute;
 
-    background-color: #e7e7e7;
+	background-color: #e7e7e7;
 
-    z-index: 1;
+	z-index: 1;
 }
 
 .viscoll-group .members .join .join-line {
-    position: absolute;
+	position: absolute;
 
-    top: 10px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+	top: 10px;
+	left: 0;
+	right: 0;
+	bottom: 0;
 
-    border-top: 10px solid #4e6891;
-    border-left: 10px solid #4e6891;
-    border-bottom: 10px solid #4e6891;
+	border-top: 10px solid #4e6891;
+	border-left: 10px solid #4e6891;
+	border-bottom: 10px solid #4e6891;
 }

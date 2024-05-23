@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+//import projectData from './data';
+
+//window.visCollData = projectData[0];
+
+const root = ReactDOM.createRoot(document.getElementById('viscoll-app'));
 root.render(
   <React.StrictMode>
     <App />

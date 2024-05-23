@@ -1,28 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ViscollViewer from './viscoll/ViscollViewer';
-import projectData from './data';
 
 // Fela info um Lx, Rx eða Lx og láta birtast ef ýtt er á takka
 
 function App() {
-    const [projectDataIndex, setProjectDataIndex] = useState(0);
+	const [langData, setLangData] = useState(null);
 
-    return (
-		<div className="App">
+	useEffect(() => {
+		if (!langData && window.visCollLangFile) {
+			fetch(window.visCollLangFile)
+				.then(res => res.json())
+				.then(json => {
+					setLangData(json)
+				});
+		}
+	}, []);
 
-            <div style={{
-                marginBottom: 20,
-                borderBottom: '1px solid #ccc',
-                padding: 20
-            }}>
-                {
-                    projectData.map((item, index) => <button key={index} onClick={() => setProjectDataIndex(index)}>{item.project.title}</button>)
-                }
-            </div>
-
-			<ViscollViewer data={projectData[projectDataIndex]} />
-
-		</div>
+	return (
+		<ViscollViewer data={window.visCollData} langData={langData} currentLang={window.visCollLang || 'is'} />
 	);
 }
 
