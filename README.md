@@ -4,7 +4,12 @@ This project includes a component for React.js that displays data from https://v
 
 Usage:
 ```
-<ViscollViewer data={[json data downloaded from Viscoll]} langData={langData} currentLang={[language key from langData]} />
+import ViscollViewer from './viscoll/ViscollViewer';
+
+<ViscollViewer
+  data={[json data downloaded from Viscoll]}
+  langData={langData}
+  currentLang={[language key from langData]} />
 ```
 
 Example data can be found in `src/data.js` and example language data in `public/langData.json`.
